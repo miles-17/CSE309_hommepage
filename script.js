@@ -52,3 +52,53 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = `meeting.html?room=${roomId}`; // Redirects to the meeting page
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Microphone and Video Toggle Logic
+    let isMicOn = true;
+    let isVideoOn = true;
+
+    const micIcon = document.getElementById("micIcon");
+    const videoIcon = document.getElementById("videoIcon");
+
+    // Toggle Microphone
+    document.getElementById("toggleMic").addEventListener("click", function () {
+        isMicOn = !isMicOn;
+        if (isMicOn) {
+            micIcon.classList.remove("fa-microphone-slash");
+            micIcon.classList.add("fa-microphone");
+            console.log("Microphone is ON");
+            // Add logic to unmute the microphone
+        } else {
+            micIcon.classList.remove("fa-microphone");
+            micIcon.classList.add("fa-microphone-slash");
+            console.log("Microphone is OFF");
+            // Add logic to mute the microphone
+        }
+    });
+
+    // Toggle Video
+    document.getElementById("toggleVideo").addEventListener("click", function () {
+        isVideoOn = !isVideoOn;
+        if (isVideoOn) {
+            videoIcon.classList.remove("fa-video-slash");
+            videoIcon.classList.add("fa-video");
+            console.log("Video is ON");
+            // Add logic to turn on the video
+        } else {
+            videoIcon.classList.remove("fa-video");
+            videoIcon.classList.add("fa-video-slash");
+            console.log("Video is OFF");
+            // Add logic to turn off the video
+        }
+    });
+
+    // End Call
+    document.addEventListener("DOMContentLoaded", function () {
+        const endCallButton = document.getElementById("endCall");
+        if (endCallButton) {
+            console.log("End Call button found!");
+        } else {
+            console.error("End Call button not found!");
+        }
+    });
+});
