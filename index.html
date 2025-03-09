@@ -15,7 +15,7 @@
 
   <body>
     <div class="wrapper">
-      <aside id="sidebar">
+      <!-- <aside id="sidebar">
         <div class="d-flex">
           <button class="toggle-btn" type="button">
             <i class="lni lni-grid-alt"></i>
@@ -26,9 +26,9 @@
         </div>
         <ul class="sidebar-nav">
           <li class="sidebar-item">
-            <a href="#" class="sidebar-link">
+            <a href="acc_create.html" class="sidebar-link">
               <i class="lni lni-user"></i>
-              <span>Profile</span>
+              <span>Create Account</span>
             </a>
           </li>
           <li class="sidebar-item">
@@ -109,22 +109,41 @@
             <span>Logout</span>
           </a>
         </div>
-      </aside>
+      </aside> -->
 
       <div class="main p-3">
         <div class="text-center">
           <img src="image_1.png" alt="Buzzy Logo" />
         </div>
-      
-        <!-- Join Meeting Button -->
-        <div class="join-meeting">
-          <button class="btn">Join Buzzy</button>
-        </div>
-      </div>
-      
 
-    <!-- Footer -->
-    <div class="footer"><a href="#">Learn more</a> about Buzzy.</div>
+        <div
+          class="d-flex justify-content-center align-items-center mt-4 gap-3"
+        >
+          <!-- Create Meeting Button -->
+          <a href="meeting.html" class="btn btn-primary btn-lg">Create Buzz</a>
+
+          <!-- Input Box -->
+          <input type="text" id="buzzID" class="form-control w-25" placeholder="Enter Buzz ID" required oninput="toggleJoinButton()" />
+
+          <!-- Join Meeting Button (Initially Disabled) -->
+          <a href="#" id="joinBuzzBtn" class="btn btn-success btn-lg disabled">Join Buzz</a>
+
+          <script>
+            function toggleJoinButton() {
+              let input = document.getElementById("buzzID");
+              let button = document.getElementById("joinBuzzBtn");
+
+              // Enable button if input is not empty
+              if (input.value.trim() !== "") {
+                button.classList.remove("disabled");
+                button.href = "meeting.html?room=" + encodeURIComponent(input.value.trim()); // Redirect to room
+              } else {
+                button.classList.add("disabled");
+                button.removeAttribute("href");
+              }
+            }
+          </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
