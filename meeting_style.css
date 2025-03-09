@@ -100,3 +100,42 @@
   cursor: pointer;
   float: right;
 }
+/* Control Buttons */
+.control-buttons {
+  position: fixed; /* Fixed positioning */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.btn-control {
+  background: none;
+  border: none;
+  color: #3f51b5;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.btn-control:hover {
+  background: rgba(63, 81, 181, 0.1);
+}
+
+.btn-end-call {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1); /* Add background for visibility */
+  border: 2px solid red; /* Temporary border for debugging */
+}
+
+.btn-end-call:hover {
+  background: rgba(255, 68, 68, 0.2);
+}
